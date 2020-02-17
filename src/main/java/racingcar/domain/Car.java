@@ -3,7 +3,6 @@ package racingcar.domain;
 import java.util.Objects;
 
 public class Car implements Comparable<Car> {
-	private static final int ZERO = 0;
 	private static final int CRITERIA = 4;
 	private static final int MAXIMUM_NAME_LENGTH = 5;
 
