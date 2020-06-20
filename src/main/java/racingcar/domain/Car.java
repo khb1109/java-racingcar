@@ -8,9 +8,13 @@ public class Car {
 	private int position;
 
 	public Car(Name userName) {
+		this(userName, 0);
+	}
+
+	public Car(Name userName, int position) {
 		Objects.requireNonNull(userName);
 		this.userName = userName;
-		this.position = 0;
+		this.position = position;
 	}
 
 	public void move(NumberStrategy numberStrategy) {

@@ -25,4 +25,14 @@ class CarTest {
 		assertThatThrownBy(() -> new Car(null))
 			.isInstanceOf(NullPointerException.class);
 	}
+
+	@DisplayName("Car의 포지션이 같은지 확인한다.")
+	@Test
+	void name2() {
+		int expect = 5;
+
+		Car car = new Car(new Name("allen"), expect);
+
+		assertThat(car.isSamePosition(expect)).isTrue();
+	}
 }
