@@ -9,17 +9,17 @@ public class Cars {
 	private final List<Car> cars;
 	private final NumberStrategy numberStrategy;
 
-	public Cars(List<Car> cars, NumberStrategy numberStrategy) throws IllegalAccessException {
+	public Cars(List<Car> cars, NumberStrategy numberStrategy) {
 		validate(cars, numberStrategy);
 		this.cars = cars;
 		this.numberStrategy = numberStrategy;
 	}
 
-	private void validate(List<Car> cars, NumberStrategy numberStrategy) throws IllegalAccessException {
+	private void validate(List<Car> cars, NumberStrategy numberStrategy) {
 		Objects.requireNonNull(numberStrategy);
 		Objects.requireNonNull(cars);
 		if (cars.size() < MIN_RACER_NUMBER) {
-			throw new IllegalAccessException("주행할 차량이 없습니다.");
+			throw new IllegalArgumentException("주행할 차량이 없습니다.");
 		}
 	}
 
