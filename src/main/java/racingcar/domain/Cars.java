@@ -1,19 +1,26 @@
 package racingcar.domain;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class Cars {
+	private static final int MIN_RACER_NUMBER = 2;
 	private final List<Car> cars;
 	private final NumberStrategy numberStrategy;
 
-	public Cars(List<Car> cars, NumberStrategy numberStrategy) {
+	public Cars(List<Car> cars, NumberStrategy numberStrategy) throws IllegalAccessException {
+		validate(cars, numberStrategy);
 		this.cars = cars;
 		this.numberStrategy = numberStrategy;
 	}
 
-	public List<Car> getCars() {
-		return cars;
+	private void validate(List<Car> cars, NumberStrategy numberStrategy) throws IllegalAccessException {
+		Objects.requireNonNull(numberStrategy);
+		Objects.requireNonNull(cars);
+		if (cars.size() < MIN_RACER_NUMBER) {
+			throw new IllegalAccessException("주행할 차량이 없습니다.");
+		}
 	}
 
 	public List<Name> findWinners() {
@@ -29,5 +36,9 @@ public class Cars {
 
 	public void doRacing() {
 		cars.forEach(car -> car.move(numberStrategy));
+	}
+
+	public List<Car> getCars() {
+		return cars;
 	}
 }

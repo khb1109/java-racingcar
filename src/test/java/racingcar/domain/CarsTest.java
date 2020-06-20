@@ -8,6 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class CarsTest {
+	private static final int ASCENDING_NUMBER = 5;
 
 	@DisplayName("Car의 승자의 이름을 구한다.")
 	@Test
@@ -24,7 +25,7 @@ class CarsTest {
 	@Test
 	void doRacing() {
 		Car allen = CarProvider.create("allen", 5);
-		Cars cars = new Cars(Arrays.asList(allen), () -> 5);
+		Cars cars = new Cars(Arrays.asList(allen), () -> ASCENDING_NUMBER);
 
 		cars.doRacing();
 

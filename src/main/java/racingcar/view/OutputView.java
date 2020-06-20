@@ -9,8 +9,9 @@ import racingcar.domain.Cars;
 import racingcar.domain.Name;
 
 public class OutputView {
-	private static final java.lang.String STRING = "-";
+	private static final java.lang.String GAGE = "-";
 	private static final String DELIMITER = ", ";
+	private static final String EMPTY = "";
 
 	public void resultText() {
 		System.out.println("실행 결과");
@@ -20,6 +21,7 @@ public class OutputView {
 		for (Car car : cars.getCars()) {
 			System.out.printf("%s : %s\n", car.getName().getName(), collectDistance(car));
 		}
+		System.out.println();
 	}
 
 	public void racingWinner(List<Name> winners) {
@@ -31,8 +33,8 @@ public class OutputView {
 	}
 
 	private String collectDistance(Car car) {
-		return IntStream.of(car.getPosition())
-			.mapToObj(x -> STRING)
-			.collect(Collectors.joining(""));
+		return IntStream.range(0, car.getPosition())
+			.mapToObj(x -> GAGE)
+			.collect(Collectors.joining(EMPTY));
 	}
 }

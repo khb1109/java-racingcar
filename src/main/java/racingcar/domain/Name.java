@@ -8,13 +8,13 @@ public class Name {
 	private final String name;
 
 	public Name(final String name) {
+		Objects.requireNonNull(name);
 		final String trimmedName = name.trim();
 		validateName(trimmedName);
 		this.name = trimmedName;
 	}
 
 	private void validateName(final String name) {
-		Objects.requireNonNull(name);
 		validateLength(name);
 	}
 
