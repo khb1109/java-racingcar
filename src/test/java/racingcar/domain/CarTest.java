@@ -36,6 +36,17 @@ class CarTest {
 		assertThat(car.isSamePosition(expect)).isTrue();
 	}
 
+	@DisplayName("Car와 다른 Car의 포지션이 같은지 확인한다.")
+	@Test
+	void name6() {
+		int expect = 5;
+
+		Car car = new Car(new Name("allen"), expect);
+		Car other = new Car(new Name("pobi"), expect);
+
+		assertThat(car.isSamePosition(other)).isTrue();
+	}
+
 	@DisplayName("두개의 Car의 Position을 비교한다.")
 	@CsvSource(value = {"5,4,1", "4,5,-1", "5,5,0"})
 	@ParameterizedTest

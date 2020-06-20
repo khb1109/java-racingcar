@@ -8,9 +8,17 @@ public class RacingCount {
 	private final int amount;
 
 	public RacingCount(int amount) {
+		validate(amount);
+		this.amount = amount;
+	}
+
+	private void validate(int amount) {
 		if (amount < MIN_COUNT || amount > MAX_COUNT) {
 			throw new InvalidRacingCountException(MESSAGE + amount);
 		}
-		this.amount = amount;
+	}
+
+	public boolean isSameCount(int runningCount) {
+		return this.amount == runningCount;
 	}
 }

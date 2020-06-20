@@ -4,16 +4,16 @@ import java.util.Objects;
 
 public class Car implements Comparable<Car> {
 	private static final int ASCENDING_CONDITION = 5;
-	private final Name userName;
+	private final Name name;
 	private int position;
 
-	public Car(Name userName) {
-		this(userName, 0);
+	public Car(Name name) {
+		this(name, 0);
 	}
 
-	public Car(Name userName, int position) {
-		Objects.requireNonNull(userName);
-		this.userName = userName;
+	public Car(Name name, int position) {
+		Objects.requireNonNull(name);
+		this.name = name;
 		this.position = position;
 	}
 
@@ -27,13 +27,18 @@ public class Car implements Comparable<Car> {
 		return this.position == position;
 	}
 
+	public boolean isSamePosition(Car other) {
+		Objects.requireNonNull(other);
+		return this.position == other.position;
+	}
+
 	@Override
 	public int compareTo(Car other) {
 		return Integer.compare(this.position, other.position);
 	}
 
-	public Name getUserName() {
-		return userName;
+	public Name getName() {
+		return name;
 	}
 
 	public int getPosition() {
