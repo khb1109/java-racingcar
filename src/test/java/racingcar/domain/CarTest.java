@@ -3,6 +3,7 @@ package racingcar.domain;
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -16,5 +17,12 @@ class CarTest {
 		car.move(() -> value);
 
 		assertThat(car.isSamePosition(expect)).isTrue();
+	}
+
+	@DisplayName("Car의 이름은 null이 올 수 없다.")
+	@Test
+	void name() {
+		assertThatThrownBy(() -> new Car(null))
+			.isInstanceOf(NullPointerException.class);
 	}
 }

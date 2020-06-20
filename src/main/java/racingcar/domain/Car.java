@@ -1,11 +1,14 @@
 package racingcar.domain;
 
+import java.util.Objects;
+
 public class Car {
 	private static final int ASCENDING_CONDITION = 5;
 	private final Name userName;
 	private int position;
 
 	public Car(Name userName) {
+		Objects.requireNonNull(userName);
 		this.userName = userName;
 		this.position = 0;
 	}
