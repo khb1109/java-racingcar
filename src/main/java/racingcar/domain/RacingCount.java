@@ -13,5 +13,4 @@ public class RacingCount {
 		}
 		this.amount = amount;
 	}
-
 }
