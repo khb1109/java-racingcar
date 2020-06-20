@@ -35,4 +35,14 @@ class CarTest {
 
 		assertThat(car.isSamePosition(expect)).isTrue();
 	}
+
+	@DisplayName("두개의 Car의 Position을 비교한다.")
+	@CsvSource(value = {"5,4,1", "4,5,-1", "5,5,0"})
+	@ParameterizedTest
+	void name3(int aPosition, int bPosition, int result) {
+		Car aCar = new Car(new Name("allen"), aPosition);
+		Car bCar = new Car(new Name("allen"), bPosition);
+
+		assertThat(aCar.compareTo(bCar)).isEqualTo(result);
+	}
 }

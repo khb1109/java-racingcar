@@ -2,7 +2,7 @@ package racingcar.domain;
 
 import java.util.Objects;
 
-public class Car {
+public class Car implements Comparable<Car> {
 	private static final int ASCENDING_CONDITION = 5;
 	private final Name userName;
 	private int position;
@@ -25,6 +25,11 @@ public class Car {
 
 	public boolean isSamePosition(int position) {
 		return this.position == position;
+	}
+
+	@Override
+	public int compareTo(Car other) {
+		return Integer.compare(this.position, other.position);
 	}
 
 	public Name getUserName() {
