@@ -33,11 +33,13 @@ class RacingGameManagerTest {
 		assertThat(winners).contains(new Name("allen"), new Name("pobi"));
 	}
 
+	@DisplayName("레이싱게임 중인지 확인한다.")
 	@Test
 	void isRunning() {
 		assertThat(racingGameManager.isRunning()).isTrue();
 	}
 
+	@DisplayName("경주를 진행하여 몇번 째 게임인지 확인한다.")
 	@Test
 	void next() {
 		racingGameManager.nextRacing();

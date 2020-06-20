@@ -22,6 +22,7 @@ class CarsTest {
 		assertThat(cars.findWinners()).contains(new Name("allen"), new Name("pobi"));
 	}
 
+	@DisplayName("자동차들을 경주시켜 조건에 맞게 이동시킨다.")
 	@Test
 	void doRacing() {
 		Car allen = CarProvider.create("allen", 5);
