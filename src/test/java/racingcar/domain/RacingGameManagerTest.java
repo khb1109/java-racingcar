@@ -18,10 +18,10 @@ class RacingGameManagerTest {
 
 	@BeforeEach
 	void setUp() {
-		Car allen = CarProvider.create("allen", 5);
-		Car pobi = CarProvider.create("pobi", 5);
-		Car woni = CarProvider.create("woni", 3);
-		Car brown = CarProvider.create("brown", 3);
+		Car allen = CarHelper.create("allen", 5);
+		Car pobi = CarHelper.create("pobi", 5);
+		Car woni = CarHelper.create("woni", 3);
+		Car brown = CarHelper.create("brown", 3);
 		Cars cars = new Cars(Arrays.asList(allen, pobi, woni, brown), () -> 0);
 
 		RacingCount racingCount = new RacingCount(3);

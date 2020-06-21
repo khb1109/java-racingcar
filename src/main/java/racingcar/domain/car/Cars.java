@@ -9,6 +9,7 @@ import racingcar.domain.car.car_info.strategy.NumberStrategy;
 
 public class Cars {
 	private static final int MIN_RACER_NUMBER = 2;
+	private static final int MAX_RACER_COUNT = 10;
 	private final List<Car> cars;
 	private final NumberStrategy numberStrategy;
 
@@ -21,8 +22,8 @@ public class Cars {
 	private void validate(List<Car> cars, NumberStrategy numberStrategy) {
 		Objects.requireNonNull(numberStrategy);
 		Objects.requireNonNull(cars);
-		if (cars.size() < MIN_RACER_NUMBER) {
-			throw new IllegalArgumentException("주행할 차량이 없습니다.");
+		if (cars.size() < MIN_RACER_NUMBER || cars.size() > MAX_RACER_COUNT) {
+			throw new IllegalArgumentException("잘못된 인원수를 잘못 입력했습니다. cars.size()=" + cars.size());
 		}
 	}
 
