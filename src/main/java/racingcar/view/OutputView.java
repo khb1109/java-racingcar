@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import racingcar.domain.Car;
-import racingcar.domain.Cars;
-import racingcar.domain.Name;
+import racingcar.domain.car.Car;
+import racingcar.domain.car.Cars;
+import racingcar.domain.car.car_info.Name;
 
 public class OutputView {
 	private static final java.lang.String GAGE = "-";

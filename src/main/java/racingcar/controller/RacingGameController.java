@@ -5,12 +5,12 @@ import static java.util.stream.Collectors.*;
 import java.util.Collections;
 import java.util.List;
 
-import racingcar.domain.Car;
-import racingcar.domain.Cars;
-import racingcar.domain.Name;
-import racingcar.domain.NumberStrategy;
 import racingcar.domain.RacingCount;
 import racingcar.domain.RacingGameManager;
+import racingcar.domain.car.Car;
+import racingcar.domain.car.Cars;
+import racingcar.domain.car.car_info.Name;
+import racingcar.domain.car.car_info.strategy.NumberStrategy;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 

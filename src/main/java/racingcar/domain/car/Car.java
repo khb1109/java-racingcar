@@ -1,6 +1,9 @@
-package racingcar.domain;
+package racingcar.domain.car;
 
 import java.util.Objects;
+
+import racingcar.domain.car.car_info.Name;
+import racingcar.domain.car.car_info.strategy.NumberStrategy;
 
 public class Car implements Comparable<Car> {
 	private static final int ASCENDING_CONDITION = 5;

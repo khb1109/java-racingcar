@@ -1,8 +1,11 @@
-package racingcar.domain;
+package racingcar.domain.car;
 
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
+
+import racingcar.domain.car.car_info.Name;
+import racingcar.domain.car.car_info.strategy.NumberStrategy;
 
 public class Cars {
 	private static final int MIN_RACER_NUMBER = 2;

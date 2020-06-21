@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import racingcar.domain.car.Car;
+import racingcar.domain.car.car_info.Name;
+
 class CarTest {
 	@DisplayName("값이 5이상이면 한칸 이동한다.")
 	@CsvSource(value = {"5,1", "4,0"})

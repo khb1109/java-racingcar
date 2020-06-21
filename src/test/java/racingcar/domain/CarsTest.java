@@ -7,6 +7,10 @@ import java.util.Arrays;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import racingcar.domain.car.Car;
+import racingcar.domain.car.Cars;
+import racingcar.domain.car.car_info.Name;
+
 class CarsTest {
 	private static final int ASCENDING_NUMBER = 5;
 
@@ -26,7 +30,8 @@ class CarsTest {
 	@Test
 	void doRacing() {
 		Car allen = CarProvider.create("allen", 5);
-		Cars cars = new Cars(Arrays.asList(allen), () -> ASCENDING_NUMBER);
+		Car pobi = CarProvider.create("allen", 5);
+		Cars cars = new Cars(Arrays.asList(allen, pobi), () -> ASCENDING_NUMBER);
 
 		cars.doRacing();
 
