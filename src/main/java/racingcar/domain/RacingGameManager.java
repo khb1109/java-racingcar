@@ -25,7 +25,7 @@ public class RacingGameManager {
 	}
 
 	public void nextRacing() {
-		cars.doRacing();
+		cars.race();
 		this.runningCount++;
 	}
 

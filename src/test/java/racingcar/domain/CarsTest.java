@@ -60,7 +60,7 @@ class CarsTest {
 		Car pobi = CarHelper.create("allen", 5);
 		Cars cars = new Cars(Arrays.asList(allen, pobi), () -> ASCENDING_NUMBER);
 
-		cars.doRacing();
+		cars.race();
 
 		assertThat(allen.isSamePosition(6)).isTrue();
 	}

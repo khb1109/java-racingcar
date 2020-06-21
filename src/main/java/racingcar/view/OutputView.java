@@ -9,7 +9,7 @@ import racingcar.domain.car.Cars;
 import racingcar.domain.car.car_info.Name;
 
 public class OutputView {
-	private static final java.lang.String GAGE = "-";
+	private static final String GAGE = "-";
 	private static final String DELIMITER = ", ";
 	private static final String EMPTY = "";
 
@@ -34,7 +34,7 @@ public class OutputView {
 
 	private String collectDistance(Car car) {
 		return IntStream.range(0, car.getPosition())
-			.mapToObj(x -> GAGE)
+			.mapToObj(num -> GAGE)
 			.collect(Collectors.joining(EMPTY));
 	}
 }

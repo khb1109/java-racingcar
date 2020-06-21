@@ -7,6 +7,7 @@ import racingcar.domain.car.car_info.strategy.NumberStrategy;
 
 public class Car implements Comparable<Car> {
 	private static final int ASCENDING_CONDITION = 5;
+
 	private final Name name;
 	private int position;
 
@@ -37,6 +38,7 @@ public class Car implements Comparable<Car> {
 
 	@Override
 	public int compareTo(Car other) {
+		Objects.requireNonNull(other);
 		return Integer.compare(this.position, other.position);
 	}
 
