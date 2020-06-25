@@ -16,11 +16,9 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import racingcar.domain.car.Car;
 import racingcar.domain.car.Cars;
-import racingcar.domain.car.car_info.Name;
+import racingcar.domain.car.info.Name;
 
 class CarsTest {
-	private static final int ASCENDING_NUMBER = 5;
-
 	private static Stream<Arguments> carProvider() {
 		return Stream.of(
 			Arguments.of(
@@ -37,7 +35,7 @@ class CarsTest {
 	@MethodSource("carProvider")
 	@ParameterizedTest
 	void name(List<Car> cars) {
-		assertThatThrownBy(() -> new Cars(cars, () -> 0))
+		assertThatThrownBy(() -> new Cars(cars, () -> true))
 			.isInstanceOf(IllegalArgumentException.class);
 	}
 
@@ -48,7 +46,7 @@ class CarsTest {
 		Car pobi = CarHelper.create("pobi", 5);
 		Car woni = CarHelper.create("woni", 3);
 		Car brown = CarHelper.create("brown", 3);
-		Cars cars = new Cars(Arrays.asList(allen, pobi, woni, brown), () -> 0);
+		Cars cars = new Cars(Arrays.asList(allen, pobi, woni, brown), () -> true);
 
 		assertThat(cars.findWinners()).contains(new Name("allen"), new Name("pobi"));
 	}
@@ -58,7 +56,7 @@ class CarsTest {
 	void doRacing() {
 		Car allen = CarHelper.create("allen", 5);
 		Car pobi = CarHelper.create("allen", 5);
-		Cars cars = new Cars(Arrays.asList(allen, pobi), () -> ASCENDING_NUMBER);
+		Cars cars = new Cars(Arrays.asList(allen, pobi), () -> true);
 
 		cars.race();
 

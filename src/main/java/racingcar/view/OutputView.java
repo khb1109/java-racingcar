@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 
 import racingcar.domain.car.Car;
 import racingcar.domain.car.Cars;
-import racingcar.domain.car.car_info.Name;
+import racingcar.domain.car.info.Name;
 
 public class OutputView {
 	private static final String GAGE = "-";

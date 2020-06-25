@@ -9,8 +9,8 @@ import racingcar.domain.RacingCount;
 import racingcar.domain.RacingGameManager;
 import racingcar.domain.car.Car;
 import racingcar.domain.car.Cars;
-import racingcar.domain.car.car_info.Name;
-import racingcar.domain.car.car_info.strategy.NumberStrategy;
+import racingcar.domain.car.info.Name;
+import racingcar.domain.car.info.strategy.NumberStrategy;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 

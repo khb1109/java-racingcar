@@ -3,7 +3,7 @@ package racingcar.domain;
 import java.util.List;
 
 import racingcar.domain.car.Cars;
-import racingcar.domain.car.car_info.Name;
+import racingcar.domain.car.info.Name;
 
 public class RacingGameManager {
 	private final Cars cars;

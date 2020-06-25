@@ -4,7 +4,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import racingcar.controller.RacingGameController;
-import racingcar.domain.car.car_info.strategy.RandomNumberStrategy;
+import racingcar.domain.car.info.strategy.RandomNumberStrategy;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 

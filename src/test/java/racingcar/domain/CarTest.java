@@ -8,16 +8,16 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import racingcar.domain.car.Car;
-import racingcar.domain.car.car_info.Name;
+import racingcar.domain.car.info.Name;
 
 class CarTest {
-	@DisplayName("값이 5이상이면 한칸 이동한다.")
-	@CsvSource(value = {"5,1", "4,0"})
+	@DisplayName("자동차는 이동규칙이 맞으면 한칸 이동한다.")
+	@CsvSource(value = {"true,1", "false,0"})
 	@ParameterizedTest
-	void name(int value, int expect) {
+	void name(boolean canMove, int expect) {
 		Car car = new Car(new Name("allen"));
 
-		car.move(() -> value);
+		car.move(() -> canMove);
 
 		assertThat(car.isSamePosition(expect)).isTrue();
 	}

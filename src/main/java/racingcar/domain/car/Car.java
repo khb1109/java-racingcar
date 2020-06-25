@@ -2,8 +2,8 @@ package racingcar.domain.car;
 
 import java.util.Objects;
 
-import racingcar.domain.car.car_info.Name;
-import racingcar.domain.car.car_info.strategy.NumberStrategy;
+import racingcar.domain.car.info.Name;
+import racingcar.domain.car.info.strategy.NumberStrategy;
 
 public class Car implements Comparable<Car> {
 	private static final int ASCENDING_CONDITION = 5;
@@ -22,7 +22,7 @@ public class Car implements Comparable<Car> {
 	}
 
 	public void move(NumberStrategy numberStrategy) {
-		if (numberStrategy.createValue() >= ASCENDING_CONDITION) {
+		if (numberStrategy.canMove()) {
 			this.position++;
 		}
 	}

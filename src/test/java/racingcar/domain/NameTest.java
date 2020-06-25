@@ -1,7 +1,7 @@
 package racingcar.domain;
 
 import static org.assertj.core.api.Assertions.*;
-import static racingcar.domain.car.car_info.RacingNameException.*;
+import static racingcar.domain.car.info.RacingNameException.*;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,8 +11,8 @@ import org.junit.jupiter.params.provider.EmptySource;
 import org.junit.jupiter.params.provider.NullSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import racingcar.domain.car.car_info.Name;
-import racingcar.domain.car.car_info.RacingNameException;
+import racingcar.domain.car.info.Name;
+import racingcar.domain.car.info.RacingNameException;
 
 class NameTest {
 	@DisplayName("이름을 생성한다")

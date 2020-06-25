@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import racingcar.domain.car.Car;
 import racingcar.domain.car.Cars;
-import racingcar.domain.car.car_info.Name;
+import racingcar.domain.car.info.Name;
 
 class RacingGameManagerTest {
 	private RacingGameManager racingGameManager;
@@ -22,7 +22,7 @@ class RacingGameManagerTest {
 		Car pobi = CarHelper.create("pobi", 5);
 		Car woni = CarHelper.create("woni", 3);
 		Car brown = CarHelper.create("brown", 3);
-		Cars cars = new Cars(Arrays.asList(allen, pobi, woni, brown), () -> 0);
+		Cars cars = new Cars(Arrays.asList(allen, pobi, woni, brown), () -> false);
 
 		RacingCount racingCount = new RacingCount(3);
 
